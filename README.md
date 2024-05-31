@@ -1,4 +1,4 @@
-# Image restoration evaluation with Model Observer
+# Restoration assessment with Model Observer
 
 It contains the codes for the paper "Evaluating an image restoration pipeline for digital mammography across varied radiation exposures and microcalcification sizes using model observer analysis", submitted to the IWBI 2024 conference. 
 We used The Laboratory for Individualized Breast Radiodensity Assessment ([LIBRA](https://www.med.upenn.edu/sbia/libra.html)), a software package developed by the University of Pennsylvania. 
