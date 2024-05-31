@@ -11,7 +11,7 @@ Mask = SimulationInfo{1, 1}.Mask;
 Coordinates = SimulationInfo{1}.Coordinates;
 for cc=1:length(Contrast) % This loop will insert the exact same cluster at the exact same location at different contrasts
     ImgL(:,:,cc)=double(img);
-    disp(['Processing lesion contrast ' num2str(cc) ' from ' num2str(length(Contrast))]);
+    %disp(['Processing lesion contrast ' num2str(cc) ' from ' num2str(length(Contrast))]);
     
     %%
     MaskN=Mask;
