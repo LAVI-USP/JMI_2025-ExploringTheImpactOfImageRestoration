@@ -11,7 +11,7 @@ In this study, we assess the impact of an image restoration pipeline, designed f
 
 ## Reference:
 
-If you use the codes, we will be very grateful if you refer to this [paper](https://doi.org/10.1117/12.2654111).
+If you use the codes, we will be very grateful if you refer to this [paper](https://doi.org/10.1117/12.3026930).
 
 BRANDÃO, Renann F. et al. "Evaluating an image restoration pipeline for digital mammography across varied radiation exposures and microcalcification sizes using model observer analysis." In: 17th International Workshop on Breast Imaging (IWBI 2024). SPIE, 2024. p. 246. [https://doi.org/10.1117/12.3026930](https://doi.org/10.1117/12.3026930)
 
