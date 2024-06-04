@@ -1,6 +1,6 @@
 %% This code illustrates the pipeline used in this paper:
 
-%  Published: R.F. Brand„o; L. E. Soares; L.R. Borges; P. R. Bakicc; A. Tingberg; M.A.C. Vieira.
+%  Published: R.F. Brand√£o; L. E. Soares; L.R. Borges; P. R. Bakicc; A. Tingberg; M.A.C. Vieira.
 %  "Evaluating an image restoration pipeline for digital mammography across varied 
 %   radiation exposures and microcalcification sizes using model observer analysis".
 %
@@ -23,7 +23,7 @@ prct = 100;
 MCSizes = [390 350 310 270 230 190];
 reducFactor = 0.5;
 NumberRlz = 3;
-addpath('Noise Parameters', 'MCs', 'BM3D_New', 'BM3D_New\bm3d', 'LesionInsert')
+addpath('Noise Parameters', 'MCs', 'BM3D_New', 'BM3D_New\bm3d')
 
 % Data Loading
 load('Phantom_FD.mat')
