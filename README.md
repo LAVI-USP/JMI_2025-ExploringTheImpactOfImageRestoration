@@ -16,7 +16,21 @@ Disclaimer: For education purposes only.
 **Conclusions:** We demonstrate the potential of an image restoration pipeline to simulate higher quality mammography images. The results indicate that reducing noise through denoising and restoration impacts the detectability of microcalcifications. This method improves image quality without hardware modifications or additional radiation exposure.
 
 ## Reference:
+If you use the codes, we will be very grateful if you refer to this [paper](https://doi.org/10.1117/12.3026930).More actions
 
+BRANDÃO, Renann F. et al. "Evaluating an image restoration pipeline for digital mammography across varied radiation exposures and microcalcification sizes using model observer analysis." In: 17th International Workshop on Breast Imaging (IWBI 2024). SPIE, 2024. p. 246. [https://doi.org/10.1117/12.3026930](https://doi.org/10.1117/12.3026930)
+More actions
+```
+@inproceedings{brandao2024evaluating,
+  title={Evaluating an image restoration pipeline for digital mammography across varied radiation exposures and microcalcification sizes using model observer analysis},
+  author={Brand{\~a}o, Renann F and Soares, Lucas E and Borges, Lucas R and Bakic, Predrag R and Tingberg, Anders and Vieira, Marcelo AC},
+  booktitle={17th International Workshop on Breast Imaging (IWBI 2024)},
+  volume={13174},
+  pages={246},
+  year={2024},
+  organization={SPIE}
+}
+```
 
 
 ## Acknowledgments:
