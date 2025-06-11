@@ -7,7 +7,7 @@ We also used the Block-matching and 3D filtering ([BM3D](https://webpages.tuni.f
 Disclaimer: For education purposes only.
 
 ## Abstract:
-*Purpose*: Breast cancer is one of the leading causes of cancer-related deaths among women, and digital mammography plays a key role in screening and early detection. The radiation dose on mammographic exams directly influences image quality and radiologists’ performance. We evaluate the impact of an image restoration pipeline—designed to simulate higher dose acquisitions—on the detectability of microcalcifications of various sizes in mammograms acquired at different radiation doses.
+**Purpose**: Breast cancer is one of the leading causes of cancer-related deaths among women, and digital mammography plays a key role in screening and early detection. The radiation dose on mammographic exams directly influences image quality and radiologists’ performance. We evaluate the impact of an image restoration pipeline—designed to simulate higher dose acquisitions—on the detectability of microcalcifications of various sizes in mammograms acquired at different radiation doses.
 
 ## Reference:
 
