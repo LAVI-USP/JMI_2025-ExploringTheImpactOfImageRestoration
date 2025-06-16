@@ -1,6 +1,6 @@
 # Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis
 
-It contains the codes for the paper "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis", submitted to the Journal of Medical Imaging (JMI). 
+It contains the codes for the paper "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis", published in the Journal of Medical Imaging (JMI), 2025. 
 We used The Laboratory for Individualized Breast Radiodensity Assessment ([LIBRA](https://www.med.upenn.edu/sbia/libra.html)), a software package developed by the University of Pennsylvania. 
 We also used the Block-matching and 3D filtering ([BM3D](https://webpages.tuni.fi/foi/GCF-BM3D/)) algorithm, a software package developed by the Tampere University of Technology, Department of Signal Processing. The Model Observer used in this work is available in this [GitHub Repository](https://github.com/DIDSR/VICTRE_MO)
 
