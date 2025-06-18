@@ -16,7 +16,7 @@ Disclaimer: For education purposes only.
 **Conclusions:** We demonstrate the potential of an image restoration pipeline to simulate higher quality mammography images. The results indicate that reducing noise through denoising and restoration impacts the detectability of microcalcifications. This method improves image quality without hardware modifications or additional radiation exposure.
 
 ## Reference:
-If you use the codes, we will be very grateful if you refer to this [paper]([https://doi.org/10.1117/12.3026930](https://doi.org/10.1117/1.JMI.12.S2.S22013)).More actions
+If you use the codes, we will be very grateful if you refer to this [paper](https://doi.org/10.1117/1.JMI.12.S2.S22013).
 
 BRANDÃO, Renann F. et al. "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis." Journal of Medical Imaging, Vol. 12, Issue S2, S22013 (June 2025). [[https://doi.org/10.1117/12.3026930](https://doi.org/10.1117/12.3026930](https://doi.org/10.1117/1.JMI.12.S2.S22013))
 More actions
