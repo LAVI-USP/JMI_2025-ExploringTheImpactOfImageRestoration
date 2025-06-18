@@ -22,17 +22,17 @@ BRANDÃO, Renann F. et al. "Exploring the impact of image restoration in simulat
 
 ```
 @article{10.1117/1.JMI.12.S2.S22013,
-author = {Renann F. Brand{\~a}o and Lucas E. Soares and Lucas R. Borges and Predrag R. Bakic and Anders Tingberg and Marcelo A. C. Vieira},
-title = {{Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis}},
-volume = {12},
-journal = {Journal of Medical Imaging},
-number = {S2},
-publisher = {SPIE},
-pages = {S22013},
-keywords = {digital mammography, image denoising, image restoration, model observer, channelized Hotelling observer, microcalcification detection, Image restoration, Image quality, Quantum noise, Mammography, Image processing, Signal to noise ratio, Statistical analysis, Cancer detection, Digital mammography, Interference (communication)},
-year = {2025},
-doi = {10.1117/1.JMI.12.S2.S22013},
-URL = {https://doi.org/10.1117/1.JMI.12.S2.S22013}
+  author = {Renann F. Brand{\~a}o and Lucas E. Soares and Lucas R. Borges and Predrag R. Bakic and Anders Tingberg and Marcelo A. C. Vieira},
+  title = {{Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis}},
+  volume = {12},
+  journal = {Journal of Medical Imaging},  
+  number = {S2},
+  publisher = {SPIE},
+  pages = {S22013},
+  keywords = {digital mammography, image denoising, image restoration, model observer, channelized Hotelling observer, microcalcification detection, Image restoration, Image quality, Quantum noise, Mammography, Image processing, Signal to noise ratio, Statistical     analysis, Cancer detection, Digital mammography, Interference (communication)},
+  year = {2025},
+  doi = {10.1117/1.JMI.12.S2.S22013},
+  URL = {https://doi.org/10.1117/1.JMI.12.S2.S22013}
 }
 ```
 
