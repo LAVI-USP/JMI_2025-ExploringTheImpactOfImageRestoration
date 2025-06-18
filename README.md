@@ -19,7 +19,7 @@ Disclaimer: For education purposes only.
 If you use the codes, we will be very grateful if you refer to this ([paper](https://doi.org/10.1117/1.JMI.12.S2.S22013)).
 
 BRANDÃO, Renann F. et al. "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis." Journal of Medical Imaging, Vol. 12, Issue S2, S22013 (June 2025). ([https://doi.org/10.1117/1.JMI.12.S2.S22013](https://doi.org/10.1117/1.JMI.12.S2.S22013)).
-More actions
+
 ```
 @article{10.1117/1.JMI.12.S2.S22013,
 author = {Renann F. Brand{\~a}o and Lucas E. Soares and Lucas R. Borges and Predrag R. Bakic and Anders Tingberg and Marcelo A. C. Vieira},
