@@ -11,7 +11,7 @@
 %
 %  THIS WORK SHOULD ONLY BE USED FOR NON-PROFIT PURPOSES!
 
-function [imgRest , imgDenoised] = DoseRestoration(Z, xi_q, Beta, Tau, xi_e,bm3dProfile)
+function [imgRest , D] = DoseRestoration(Z, xi_q, Beta, Tau, xi_e,bm3dProfile)
 
 %% Generalized Anscombe transformation (GAT)
 fz = 2./xi_q.*sqrt(max(0,xi_q.*(Z-Tau) + (3/8).*xi_q.^2 + xi_e^2));
