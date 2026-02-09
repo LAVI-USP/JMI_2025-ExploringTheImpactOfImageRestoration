@@ -1,8 +1,9 @@
 %% This code illustrates the pipeline used in this paper:
 
-%  Published: R.F. Brand√£o; L. E. Soares; L.R. Borges; P. R. Bakicc; A. Tingberg; M.A.C. Vieira.
-%  "Evaluating an image restoration pipeline for digital mammography across varied 
-%   radiation exposures and microcalcification sizes using model observer analysis".
+%  Published: R.F. Brand„o; L. E. Soares; L.R. Borges; P. R. Bakicc; A. Tingberg; M.A.C. Vieira.
+%  "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability 
+%   of microcalcifications across different sizes using model observer
+%   analysis."
 %
 %  NOTE: This package contains pre-calculated noise parameters from Siemens Mammomat
 %  Inspiration on FFDM mode. The parameters may differ from system to system
@@ -20,10 +21,11 @@ clc
 
 % Settings and Parameters
 prct = 100;
-MCSizes = [390 350 310 270 230 190];
-reducFactor = 0.5;
+MCSizes = [350 310 270 230 190 150 110];
 NumberRlz = 3;
-addpath('Noise Parameters', 'MCs', 'BM3D_New', 'BM3D_New\bm3d')
+Beta = 2;
+
+addpath('Noise Parameters', 'MC clusters', 'BM3D_New', 'BM3D_New\bm3d')
 
 % Data Loading
 load('Phantom_FD.mat')
@@ -51,25 +53,25 @@ for n = 1:NumberRlz
     disp(['Number of realization: ' num2str(n) ' of ' num2str(NumberRlz)])
     for mc = 1:length(MCSizes)
         disp(['Microcalcification size: ' num2str(MCSizes(mc)) 'um'])
-        [usedRegions,PossiblePoints]=insertLesion(n, mc, MCSizes(mc), prct, img, info_ori, PossiblePoints, ImgFolder_final, SetProfile, reducFactor, FullBreastMask, Lambda_e, Sigma_E, Tau, usedRegions);
+        [usedRegions,PossiblePoints]=insertLesion(n, mc, MCSizes(mc), prct, img, info_ori, PossiblePoints, ImgFolder_final, SetProfile, Beta, FullBreastMask, xi_q, xi_e, Tau, usedRegions);
     end
 end
 
 % Function to insert lesion
-function [usedRegions,PossiblePoints]=insertLesion(n, mc, mcSize, prct, img, info_ori, PossiblePoints, ImgFolder_final, SetProfile, reducFactor, FullBreastMask, Lambda_e, Sigma_E,Tau, usedRegions)
+function [usedRegions,PossiblePoints]=insertLesion(n, mc, mcSize, prct, img, info_ori, PossiblePoints, ImgFolder_final, SetProfile, Beta, FullBreastMask, xi_q, xi_e,Tau, usedRegions)
 Contrast = 0.08;
 newfolder_aux = fullfile(ImgFolder_final, 'MC insert', [num2str(prct) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]);
 if ~exist(newfolder_aux, 'dir')
     mkdir(newfolder_aux);
-    mkdir(fullfile(ImgFolder_final, 'MC insert', [num2str(prct/reducFactor) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]));
+    mkdir(fullfile(ImgFolder_final, 'MC insert', [num2str(prct*Beta) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]));
 end
 
-if ~exist(fullfile(ImgFolder_final, 'MC insert', [num2str(prct/reducFactor) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]), 'dir')
-    mkdir(fullfile(ImgFolder_final, 'MC insert', [num2str(prct/reducFactor) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]));
+if ~exist(fullfile(ImgFolder_final, 'MC insert', [num2str(prct*Beta) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]), 'dir')
+    mkdir(fullfile(ImgFolder_final, 'MC insert', [num2str(prct*Beta) 'prct'], [num2str(mcSize) 'um'], ['rls_' num2str(n)]));
 end
 
 % Load lesion mask
-load(['MCs\MaskMC_' num2str(mcSize) 'um.mat'])
+load(['MC clusters\MaskMC_' num2str(mcSize) 'um.mat'])
 Mask = MaskMC;
 SimulationInfo_Signal{1}.Mask = Mask;
 
@@ -79,7 +81,7 @@ if mc == 1
     SimulationInfo_Signal{1}.Coordinates = Coordinates;
     save(fullfile(newfolder_aux, 'SimulationInfo_Signal.mat'), 'SimulationInfo_Signal');
 else
-    load(fullfile('Results', 'MC insert', '100prct', '390um', ['rls_' num2str(n)], 'SimulationInfo_Signal.mat'), 'SimulationInfo_Signal');
+    load(fullfile('Results', 'MC insert', '100prct', '350um', ['rls_' num2str(n)], 'SimulationInfo_Signal.mat'), 'SimulationInfo_Signal');
     SimulationInfo_Signal{1}.Mask = Mask;
 end
 
@@ -94,7 +96,7 @@ saveDicomImage(ROI_with_MC, newfolder_aux, ['ROI_MC_' num2str(mcSize) 'um.IMA'],
 [usedRegions,PossiblePoints]=processAbsenceOfLesion(n, mc, mcSize, img, PossiblePoints, newfolder_aux, info_ori, SimulationInfo_Signal, ImgFolder_final, Mask, usedRegions);
 
 % Restoration step
-[imgRest, imgDenoised] = restoreImage(ImgL, Lambda_e, reducFactor, Tau, Sigma_E, SetProfile, FullBreastMask);
+[imgRest, imgDenoised] = restoreImage(ImgL, xi_q, Beta, Tau, xi_e, SetProfile, FullBreastMask);
 
 % Save restored image with lesion
 ROI_with_MC_Rest = getROI(imgRest, SimulationInfo_Signal{1}.Coordinates, Mask);
@@ -158,11 +160,11 @@ end
 end
 
 % Function to restore image
-function [imgRest, imgDenoised] = restoreImage(ImgL, Lambda_e, reducFactor, Tau, Sigma_E, SetProfile, FullBreastMask)
+function [imgRest, imgDenoised] = restoreImage(ImgL, xi_q, Beta, Tau, xi_e, SetProfile, FullBreastMask)
 Crop_z = ImgL(730:2720, 1350:end);
-[imgRest_aux, imgDenoised_aux] = DoseRestoration(Crop_z, Lambda_e(730:2720, 1350:end), reducFactor, Tau, Sigma_E, SetProfile);
+[imgRest_aux, imgDenoised_aux] = DoseRestoration(Crop_z, xi_q(730:2720, 1350:end), Beta, Tau, xi_e, SetProfile);
 
-imgRest = (ImgL - Tau) ./ reducFactor + Tau;
+imgRest = (ImgL - Tau) ./ Beta + Tau;
 imgRest(FullBreastMask(:, 1:end)) = imgRest_aux(FullBreastMask(730:2720, 1350:end));
 
 imgDenoised = ImgL;
