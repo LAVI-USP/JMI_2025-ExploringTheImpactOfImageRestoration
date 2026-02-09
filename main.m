@@ -26,6 +26,7 @@ NumberRlz = 3;
 Beta = 2;
 
 addpath('Noise Parameters', 'MC clusters', 'BM3D_New', 'BM3D_New\bm3d')
+addpath('Noise Parameters', 'MCs', 'BM3D_New', 'BM3D_New\bm3d')
 
 % Data Loading
 load('Phantom_FD.mat')
@@ -72,6 +73,7 @@ end
 
 % Load lesion mask
 load(['MC clusters\MaskMC_' num2str(mcSize) 'um.mat'])
+load(['MCs\MaskMC_' num2str(mcSize) 'um.mat'])
 Mask = MaskMC;
 SimulationInfo_Signal{1}.Mask = Mask;
 
