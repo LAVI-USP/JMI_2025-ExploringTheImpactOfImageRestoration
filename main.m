@@ -25,7 +25,6 @@ MCSizes = [350 310 270 230 190 150 110];
 NumberRlz = 3;
 Beta = 2;
 
-addpath('Noise Parameters', 'MC clusters', 'BM3D_New', 'BM3D_New\bm3d')
 addpath('Noise Parameters', 'MCs', 'BM3D_New', 'BM3D_New\bm3d')
 
 % Data Loading
@@ -72,7 +71,6 @@ if ~exist(fullfile(ImgFolder_final, 'MC insert', [num2str(prct*Beta) 'prct'], [n
 end
 
 % Load lesion mask
-load(['MC clusters\MaskMC_' num2str(mcSize) 'um.mat'])
 load(['MCs\MaskMC_' num2str(mcSize) 'um.mat'])
 Mask = MaskMC;
 SimulationInfo_Signal{1}.Mask = Mask;
@@ -107,7 +105,7 @@ saveDicomImage(ROI_with_MC_Rest, fullfile(ImgFolder_final, 'MC insert', '200prct
 
 % Save restored image without lesion
 for r = 1:3
-    load(fullfile(ImgFolder_final, 'MC insert', '100prct', '390um', ['rls_' num2str(n)], ['SimulationInfo_Absent_' num2str(r) '.mat']), 'SimulationInfo_Absent');
+    load(fullfile(ImgFolder_final, 'MC insert', '100prct', '350um', ['rls_' num2str(n)], ['SimulationInfo_Absent_' num2str(r) '.mat']), 'SimulationInfo_Absent');
     ROI_without_MC = getROI(imgRest, SimulationInfo_Absent{1}.Coordinates, Mask);
     saveDicomImage(ROI_without_MC, fullfile(ImgFolder_final, 'MC insert', '200prct', [num2str(mcSize) 'um'], ['rls_' num2str(n)]), ['absent_' num2str(r) '.IMA'], info_ori);
 end
@@ -148,7 +146,7 @@ for r = 1:3
         SimulationInfo_Absent{1}.Coordinates = Coordinates;
         save(fullfile(newfolder_aux, ['SimulationInfo_Absent_' num2str(r) '.mat']), 'SimulationInfo_Absent');
     else
-        load(fullfile('Results', 'MC insert', '100prct', '390um', ['rls_' num2str(n)], ['SimulationInfo_Absent_' num2str(r) '.mat']), 'SimulationInfo_Absent');
+        load(fullfile('Results', 'MC insert', '100prct', '350um', ['rls_' num2str(n)], ['SimulationInfo_Absent_' num2str(r) '.mat']), 'SimulationInfo_Absent');
         SimulationInfo_Absent{1}.Mask = Mask;
     end
     
