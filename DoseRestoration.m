@@ -1,13 +1,17 @@
 %% This function restores digital mammography RAW images
 %
-%  Published: Borges, Lucas R., et al. "Restoration of low-dose digital breast tomosynthesis."
-%  Measurement Science and Technology 29.6 (2018): 064003.
+%  Published: BRANDÃO, Renann F. et al. Exploring the impact of image restoration in
+%  simulating higher dose mammography: effects on the detectability of microcalcifications
+%  across different sizes using model observer analysis". Journal of
+%  Medical Imaging, (2025), addpated from Borges, Lucas R., et al.
+%  "Restoration of low-dose digital breast tomosynthesis." Measurement Science
+%  and Technology 29.6 (2018): 064003.
 %
-%  Inputs:    Z - Original image with standard dose (RAW DBT projection or RAW FFDM)
+%  Inputs:    Z - Original image with standard dose
 %             xi_q - Gain of the quantum noise
-%             Beta - Reduction rate (e.g. 0.5 for 50% dose reduction)
-%             Tau - Detector offset (e.g. ~50 for Hologic DBT systems)
-%             xi_e - Standard deviation of the electronic noise (e.g. ~3 for Hologic systems)
+%             Beta - Gain target for restoration (e.g. of input 100%, the final restored image simulates 200%)
+%             Tau - Detector offset 
+%             xi_e - Standard deviation of the electronic noise 
 %
 %  THIS WORK SHOULD ONLY BE USED FOR NON-PROFIT PURPOSES!
 
