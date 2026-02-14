@@ -1,9 +1,9 @@
 %% This function restores digital mammography RAW images
 %
-%  Published: BRANDÃO, Renann F. et al. Exploring the impact of image restoration in
+%  Published: Brandao, Renann F. et al. Exploring the impact of image restoration in
 %  simulating higher dose mammography: effects on the detectability of microcalcifications
 %  across different sizes using model observer analysis". Journal of
-%  Medical Imaging, (2025), addpated from Borges, Lucas R., et al.
+%  Medical Imaging, (2025), adapted from Borges, Lucas R., et al.
 %  "Restoration of low-dose digital breast tomosynthesis." Measurement Science
 %  and Technology 29.6 (2018): 064003.
 %
@@ -40,5 +40,6 @@ rho2 = Beta - rho1;
 
 %% Weighted sum of reduced img and denoised img
 imgRest = rho1.*(Z - Tau) + rho2.*D + Tau;
+
 
 end
