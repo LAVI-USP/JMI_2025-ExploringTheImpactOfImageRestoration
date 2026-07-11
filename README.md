@@ -64,15 +64,15 @@ This repository contains only the source code required to reproduce the methodol
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{Brandao2025JMI,
-  author = {Brandão, Renann de Faria and Soares, Lucas Exposto and Borges, Lucas Rodrigues and Bakic, Predrag R. and Tingberg, Anders and Vieira, Marcelo Andrade da Costa},
-  title = {Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis},
-  journal = {Journal of Medical Imaging},
-  volume = {12},
-  number = {S2},
-  pages = {S22013},
-  year = {2025},
-  doi = {10.1117/1.JMI.12.S2.S22013}
+@article{brandao2025exploring,
+  title={Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis},
+  author={Brand{\~a}o, Renann F and Soares, Lucas E and Borges, Lucas R and Bakic, Predrag R and Tingberg, Anders and Vieira, Marcelo AC},
+  journal={Journal of Medical Imaging},
+  volume={12},
+  number={S2},
+  pages={S22013--S22013},
+  year={2025},
+  publisher={Society of Photo-Optical Instrumentation Engineers}
 }
 ```
 
