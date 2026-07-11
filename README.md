@@ -1,40 +1,95 @@
-# Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis
+# Exploring the impact of image restoration in simulating higher-dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis
 
-It contains the codes for the paper "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis", published in the Journal of Medical Imaging (JMI), 2025. 
-We used The Laboratory for Individualized Breast Radiodensity Assessment ([LIBRA](https://www.med.upenn.edu/sbia/libra.html)), a software package developed by the University of Pennsylvania. 
-We also used the Block-matching and 3D filtering ([BM3D](https://webpages.tuni.fi/foi/GCF-BM3D/)) algorithm, a software package developed by the Tampere University of Technology, Department of Signal Processing. The Model Observer used in this work is available in this [GitHub Repository](https://github.com/DIDSR/VICTRE_MO)
+This repository contains the MATLAB code accompanying the paper:
 
-Disclaimer: For education purposes only.
+> **Exploring the impact of image restoration in simulating higher-dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis**, *Journal of Medical Imaging (JMI)*, 2025.
 
-## Abstract:
-**Purpose:** Breast cancer is one of the leading causes of cancer-related deaths among women, and digital mammography plays a key role in screening and early detection. The radiation dose on mammographic exams directly influences image quality and radiologists’ performance. We evaluate the impact of an image restoration pipeline, designed to simulate higher dose acquisitions, on the detectability of microcalcifications of various sizes in mammograms acquired at different radiation doses.
+## Overview
 
-**Approach:** The restoration pipeline denoises the image using a Poisson–Gaussian noise model, combining it with the noisy image to achieve a signal-to-noise ratio comparable with an acquisition at twice the original dose. We created a database of images using a physical breast phantom at doses ranging from 50% to 200% of the standard dose. Clustered microcalcifications were computationally inserted into the phantom images. The channelized Hotelling observer was employed in a fouralternative forced-choice to evaluate the detectability of microcalcifications across different sizes and exposure levels.
+This repository contains the MATLAB implementation used in the experiments reported in the above publication. The proposed framework investigates how image restoration can be employed to simulate mammography images acquired at higher radiation dose levels and evaluates its impact on the detectability of microcalcifications using a model observer.
 
-**Results:** The restoration of low-dose images acquired at ∼75% of the standard dose resulted in detectability levels comparable with those of images acquired at the standard dose. Moreover, images restored at the standard dose demonstrated detectability similar to those acquired at 160% of the nominal radiation dose, with no statistically significant differences.
+The repository includes the complete processing pipeline used in the study, from image restoration and dose simulation to model observer analysis and generation of the figures presented in the manuscript.
 
-**Conclusions:** We demonstrate the potential of an image restoration pipeline to simulate higher quality mammography images. The results indicate that reducing noise through denoising and restoration impacts the detectability of microcalcifications. This method improves image quality without hardware modifications or additional radiation exposure.
+## External software
 
-## Reference:
-If you use the codes, we will be very grateful if you refer to this ([paper](https://doi.org/10.1117/1.JMI.12.S2.S22013)).
+This work relies on the following external software and open-source implementations:
 
-BRANDÃO, Renann F. et al. "Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis." Journal of Medical Imaging, Vol. 12, Issue S2, S22013 (June 2025). ([https://doi.org/10.1117/1.JMI.12.S2.S22013](https://doi.org/10.1117/1.JMI.12.S2.S22013)).
+* **LIBRA (Laboratory for Individualized Breast Radiodensity Assessment)**, developed by the University of Pennsylvania, was used for automated breast density assessment and dense breast tissue segmentation. Available at: https://www.med.upenn.edu/sbia/libra.html
 
+* **BM3D (Block-Matching and 3D Filtering)**, developed by the Department of Signal Processing at Tampere University, was used as one of the image denoising methods evaluated in this study. Available at: https://webpages.tuni.fi/foi/GCF-BM3D/
+
+* **VICTRE Model Observer**, developed by the U.S. Food and Drug Administration (FDA), was used for the detectability analysis. The implementation is available at: https://github.com/DIDSR/VICTRE_MO
+
+These external packages are maintained by their respective authors and are not distributed as part of this repository.
+
+Disclaimer: For educational purposes only.
+
+
+## Requirements
+
+The code was developed and tested using:
+
+- MATLAB R2025b
+
+The implementation may also work with earlier MATLAB versions, although compatibility is not guaranteed.
+
+---
+
+## Getting started
+
+1. Clone this repository
+
+```bash
+git clone https://github.com/LAVI-USP/JMI_2025-ExploringTheImpactOfImageRestoration.git
 ```
-@article{brandao2025exploring,
-  author = {Renann F. Brand{\~a}o and Lucas E. Soares and Lucas R. Borges and Predrag R. Bakic and Anders Tingberg and Marcelo A. C. Vieira},
-  title = {{Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis}},
+
+2. Open MATLAB.
+
+3. Add the repository and all subfolders to the MATLAB path.
+
+4. Execute the main script located in the `Scripts` folder.
+
+---
+
+## Data availability
+
+The mammography images used in this study originate from clinical datasets and therefore cannot be publicly distributed.
+
+This repository contains only the source code required to reproduce the methodology. Example data or simulated datasets may be provided whenever possible.
+
+---
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@article{Brandao2025JMI,
+  author = {Brandão, Renann de Faria and Soares, Lucas Exposto and Borges, Lucas Rodrigues and Bakic, Predrag R. and Tingberg, Anders and Vieira, Marcelo Andrade da Costa},
+  title = {Exploring the impact of image restoration in simulating higher dose mammography: effects on the detectability of microcalcifications across different sizes using model observer analysis},
+  journal = {Journal of Medical Imaging},
   volume = {12},
-  journal = {Journal of Medical Imaging},  
   number = {S2},
-  publisher = {SPIE},
   pages = {S22013},
-  keywords = {digital mammography, image denoising, image restoration, model observer, channelized Hotelling observer, microcalcification detection, Image restoration, Image quality, Quantum noise, Mammography, Image processing, Signal to noise ratio, Statistical     analysis, Cancer detection, Digital mammography, Interference (communication)},
   year = {2025},
-  doi = {10.1117/1.JMI.12.S2.S22013},
-  URL = {https://doi.org/10.1117/1.JMI.12.S2.S22013}
+  doi = {10.1117/1.JMI.12.S2.S22013}
 }
 ```
+
+---
+
+## License
+
+This project is intended for academic and research purposes.
+
+---
+
+## Contact
+
+Renann F. Brandão  
+Laboratory for Advanced Vision and Imaging (LAVI)  
+São Carlos School of Engineering (EESC)  
+University of São Paulo (USP)
 
 
 ## Acknowledgments:
