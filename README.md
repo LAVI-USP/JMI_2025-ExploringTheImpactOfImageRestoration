@@ -84,6 +84,9 @@ This project is intended for academic and research purposes.
 
 ---
 
+## Acknowledgments:
+This work was supported by the São Paulo Research Foundation (FAPESP) (Grant No. #2021/ 12673-6) and by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior—Brasil (CAPES)—Finance Code 001.
+
 ## Contact
 
 Renann F. Brandão  
@@ -92,5 +95,3 @@ São Carlos School of Engineering (EESC)
 University of São Paulo (USP)
 
 
-## Acknowledgments:
-This work was supported by the São Paulo Research Foundation (FAPESP) (Grant No. #2021/ 12673-6) and by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior—Brasil (CAPES)—Finance Code 001.
